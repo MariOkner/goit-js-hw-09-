@@ -9,8 +9,7 @@ stopBtn.addEventListener('click', onStopButtonClick);
 
 let intervalId = null;
 
-
-
+// додаю класи для формлення
 const navButtonEl = document.createElement('div');
 navButtonEl.classList.add('button-center');
 body.insertBefore(navButtonEl, body.children[1]);
@@ -19,6 +18,7 @@ navButtonEl.append(startBtn, stopBtn);
 
 startBtn.classList.add('start-button');
 stopBtn.classList.add('stop-button');
+
 
 // ставлю рандомний колір на боді 
 function getRandomColorBody() {
@@ -62,33 +62,3 @@ function onStopButtonClick(event) {
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
-
-// ____________________________________
-// const color = {
-//     intervalId: null,
-//     isActive: false,
-//     start() {
-//         if (this.isActive) {
-//             return;
-//         }
-
-//         // const startColor = {};
-//         this.isActive = true;
-        
-//         this.intervalId = setInterval(() => {
-//            body.style.backgroundColor = getRandomHexColor();
-//         }, 1000);
-//     },
-//     stop() {
-//         clearInterval(this.intervalId);
-//         this.isActive = false;
-//     }
-// };
-
-// starBtn.addEventListener('click', () => {
-//    color.start(); 
-// });
-
-// stopBtn.addEventListener('click', () => {
-//     color.stop();
-// });
