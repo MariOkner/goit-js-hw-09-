@@ -1,4 +1,5 @@
 import Notiflix from 'notiflix';
+import '../css/03-promises.css'
 
 const formEl = document.querySelector('form');
 
@@ -45,5 +46,11 @@ function onPromisesButtonSubmit(event) {
 }
 
 // додаю класи для оформлення
-const navDelayFirstValue = document.querySelector('input')
-navDelayFirstValue.classList.add('backlight-frame');
+const navInputValue = document.querySelectorAll('input');
+// console.log(navInputValue);
+navInputValue.forEach((el) => {
+  el.classList.add('backlight-frame')
+});
+
+const navButton = document.querySelector('button');
+navButton.classList.add('color-button')
