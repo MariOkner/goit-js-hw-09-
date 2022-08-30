@@ -25,26 +25,18 @@ function getRandomColorBody() {
     return body.style.backgroundColor = getRandomHexColor();     
 };
 
-function onStartButtonClick(event) {
-    if (event.target.dataset.start) {
-        return;
-    };
-    
-    if (!event.target.disabled) {
-        event.target.disabled = true;
-
+function onStartButtonClick(event) {   
+    if (!startBtn.disabled) {
+        startBtn.disabled = true;
         intervalId = setInterval(getRandomColorBody, 1000);
-    };
-    
+    }
+
     if (stopBtn.disabled) {
         stopBtn.disabled = false;
     }
 };
 
 function onStopButtonClick(event) {
-    if (event.target.dataset.stop) {
-        return;
-    };
     
     clearInterval(intervalId);
 
@@ -52,8 +44,8 @@ function onStopButtonClick(event) {
         startBtn.disabled = false;
     }
 
-    if (!event.target.disabled) {
-        event.target.disabled = true;
+    if (!stopBtn.disabled) {
+        stopBtn.disabled = true;
     }
     // return body.style.backgroundColor = "";
 };
